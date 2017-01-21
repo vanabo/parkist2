@@ -1,11 +1,11 @@
-@import url(http://allfont.ru/allfont.css?fonts=roboto-condensed);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 html {
     font-size: 16px;
 }
 body {
   padding-top: 50px;
   padding-bottom: 20px;
-  font-family: 'Roboto Condensed', arial;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
 }
 a {
@@ -15,7 +15,7 @@ cursor: pointer;
   /* critical sizing and position styles */
   width: 100%;
   position: fixed;
-  height: 101%;
+  height: 100%;
   top: 0;
   right: 0;
   bottom: 0;
@@ -126,6 +126,8 @@ html, body { height: 100%; width: 100%; }
     }
 .modal-content {
 border-radius: 0;
+width: 320px;
+margin: 0 auto;
     }
 .form-control {
     border-radius: 0;
@@ -157,7 +159,7 @@ text-align:right;
 padding-top:10px;
 }
 .phone {
-font-size: 1.4rem;
+font-size: 2.1rem;
 color: white;
 }
 .call-back {
@@ -168,14 +170,10 @@ margin-top: 55px;
 background: #65afb8;
 }
 .call-back a {
-
-font-size: 1.2rem;
+font-size: 1.4rem;
 color: #333;
 }
 .call-back a:hover {
-
-font-size: 0.9rem;
-
 color: #333;
 }
 .block-slide {
@@ -296,6 +294,7 @@ ul.errorlist li {
 .pre-text {
     text-align: center;
     padding-top:30px;
+    padding-bottom:30px;
 }
 .pre-text span {
     font-size: 1.4rem;
@@ -313,15 +312,17 @@ margin-top: 30px;
 padding:25px;
 background: rgba(251, 251, 251, 0.7);
 margin-top:40px;
+text-align:center;
 }
 .block-table p{
-    font-size: 1rem;
+    font-size: 1.4rem;
     text-align: left;
     padding-top:15px;
     padding-bottom:15px;
+    text-align:center;
 }
 .block-table p span{
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 .block-pictures .block-img {
 text-align: center;
@@ -342,7 +343,7 @@ text-align: center;
 color: #fff;
 margin-top: 25px;
 }
-.block-how {    
+.block-how {
 background: #eee;
 }
 .block-how-son {
@@ -376,33 +377,33 @@ width: 150px;
 height: 150px;
 border: 6px solid #65afb8;
 margin: 40px auto;
-font-size: 2.6rem;
+font-size: 3.6rem;
 line-height:0.8;
 padding-top: 30px;
 }
 .block-price-small span {
-font-size: 0.9rem;
+font-size: 1.2rem;
 margin-top:-20px;
 }
 .block-price p {
-font-size: 1.9rem;
+font-size: 2.2rem;
 line-height: 0.8;
 }
 .block-price p span {
-font-size: 1rem;
+font-size: 1.4rem;
 }
 span.rub{
  display: inline-block;
- font-size: 2.5rem;
- line-height: 7px;
- border-bottom: 2px solid #000000;
+ font-size: 3.5rem;
+ line-height: 9px;
+ border-bottom: 2px solid #333;
 
 }
 .block-price p span.rub-small{
  display: inline-block;
- font-size: 2rem;
+ font-size: 2.1rem;
  line-height: 7px;
- border-bottom: 2px solid #000000;
+ border-bottom: 2px solid #333;
 
 }
 .block-features {
@@ -450,12 +451,12 @@ text-align:center;
 }
 .black-text {
 color: #333;
-font-size: 1.4rem;
+font-size: 1.8rem;
 margin-top: 25px;
 }
 .white-text {
 color: #fff;
-font-size: 1.4rem;
+font-size: 1.8rem;
 margin-top: 25px;
 }
 .footer, .block-footer {
@@ -465,7 +466,6 @@ background: #333;
 padding-top: 30px;
 min-height: 150px;
 }
-
 .block-map {
 border-top: 4px solid #65afb8;
 height: 450px;
@@ -503,9 +503,8 @@ padding-top: 22px;
 .footer-block2 .social-icon {
 padding: 10px;
 }
-
 .modal-body {
-border:none;    
+border:none;
 }
 
 @media (max-width: 768px) {
@@ -513,25 +512,15 @@ html {
     font-size: 14px;
 }
 .phone {
-
 font-size: 1.8rem;
-
-font-size: 1.125rem;
-
 }
 .block-contact {
 text-align: right;
-margin-top: -55px;
 padding-right: 20px;
 }
 .button-orange {
-
 font-size: 1.8rem;
 padding: 10px 15px 10px 15px;
-
-font-size: 1.125rem;
-padding: 10px 20px 10px 20px;
-
 }
 .block-features-text, .block-features, .block-features2 {
     padding-top: 20px;
@@ -550,31 +539,33 @@ padding:10px;
 }
 }
 
-
 @media (max-width: 540px) {
+.block-logo img {
+width: 110px;
+}
+.call-back a {
+font-size: 1.3rem;
+}
+.phone {
+font-size: 1.6rem;
+}
 .date-time {
     display: flex;
     flex-direction: column;
 }
-
 .input-group.date {
     width: 100%;
     margin-top:10px;
 }
-
 .input-group.time {
     width: 100%;
     margin-top:10px;
 }}
 
-
 .modal-body {
 border: none;
 }
-.modal-dialog  {
-width: 285px;
-}
 .modal-footer {
-    border: none;
-    text-align:center;
-    }
+border: none;
+text-align:center;
+}
