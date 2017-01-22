@@ -5,7 +5,7 @@ import datetime
 
 class Order(models.Model):
     current_point = GeopositionField(blank=False)
-    current_date = models.DateField(blank=True, auto_now=False, auto_now_add=True, default=datetime.date.today())
+    current_date = models.DateField(blank=True, auto_now=True, auto_now_add=False, default=datetime.date.today())
     current_time = models.TimeField(blank=True)
     phone4 = models.CharField(max_length=15, blank=False)
 
