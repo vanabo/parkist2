@@ -69,16 +69,6 @@ class Order(ModelForm):
             raise forms.ValidationError('Введите, пожалуйста, требуемое время парковки в рабочие часы с 8:00 до 20:00')
         return current_time
 
-    def clean_current_date(self, *args, **kwargs):
-        current_date = self.cleaned_data.get('current_date')
-        if current_date < d:
-            raise forms.ValidationError('Введите, пожалуйста, дату сегодня или позднее')
-        elif current_date.weekday() == 5:
-            raise forms.ValidationError('Выберите, пожалуйста, будний день')
-        elif current_date.weekday() == 6:
-            raise forms.ValidationError('Выберите, пожалуйста, будний день')
-        return current_date
-
 class CallBack2(ModelForm):
     class Meta:
         model = CallBack2
