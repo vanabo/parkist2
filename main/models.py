@@ -19,8 +19,8 @@ mm = d.month
 
 class Order(models.Model):
     current_point = GeopositionField(blank=False)
-    current_date = models.DateField(blank=False)
-    current_time = models.TimeField(blank=False)
+    current_date = models.DateField(blank=True)
+    current_time = models.TimeField(blank=True)
     phone4 = models.CharField(max_length=15, blank=False)
 
 class CallBack2(models.Model):
