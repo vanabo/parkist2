@@ -33,7 +33,7 @@ if (jQuery != undefined) {
                 $mapContainer = $('<div class="geoposition-map2" />'),
                 $addressRow = $('<div class="geoposition-address2" />'),
                 $searchRow = $('<div class="form-group geoposition-search2" />'),
-                $searchInput = $('<input>', {'type': 'search', 'class': 'form-control', 'required': 'True', 'placeholder': 'Введите адрес, где Вас встретит Паркист'}),
+                $searchInput = $('<input>', {'type': 'search', 'class': 'form-control', 'placeholder': 'Введите адрес, где Вас встретит Паркист'}),
                 $latitudeField = $container.find('input.geoposition:eq(0)'),
                 $longitudeField = $container.find('input.geoposition:eq(1)'),
                 latitude = parseFloat($latitudeField.val()) || null,

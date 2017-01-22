@@ -15,7 +15,7 @@ class Order(ModelForm):
                                                     "pickDate": False},
                                            icon_attrs={'class': 'glyphicon glyphicon-time'},
                                            div_attrs={'class': 'input-group time'}),
-            'current_date': DateTimePicker(options={"pickTime": False}, icon_attrs = {'class': 'glyphicon glyphicon-date'},
+            'current_date': DateTimePicker(options={"format": "DD.MM.YYYY", "pickTime": False}, icon_attrs = {'class': 'glyphicon glyphicon-date'},
                                            div_attrs = {'class': 'input-group date'}),
         }
     class Media:
@@ -37,6 +37,12 @@ class Order(ModelForm):
             'class': 'form-control',
             'id': 'phone',
         })
+
+    def clean_current_point(self, *args, **kwargs):
+        current_point = self.cleaned_data.get('current_point')
+        if current_point == "":
+            raise forms.ValidationError('Введите, пожалуйста, адрес')
+        return current_point
 
     def clean_current_time(self, *args, **kwargs):
         current_time = self.cleaned_data.get('current_time')
