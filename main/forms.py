@@ -6,20 +6,6 @@ from . models import Order, CallBack2
 
 import datetime
 
-d = datetime.date.today()
-s = datetime.datetime.now()
-tv1 = s.time
-td = datetime.timedelta(minutes=30)
-tv = s + td
-
-td2 = datetime.timedelta(days=7)
-
-date1 = d
-date2 = d + td2
-yy = d.year
-dd = d.day
-mm = d.month
-
 class Order(ModelForm):
     class Meta:
         model = Order
@@ -40,17 +26,6 @@ class Order(ModelForm):
             'geoposition/js/geoposition.js',
         )
 
-    #current_date = forms.DateField(label='Дата*', widget=SelectDateWidget(attrs={'class': 'form-control-date'}),
-                                   #initial=d, required=True)
-    #current_time = forms.TimeField(label='Время*',
-                                   #widget=forms.TimeInput(attrs={'class': 'form-control-time', 'size': '8'}),
-                                   #initial=tv, required=True)
-    #phone3 = forms.CharField(label='Телефон*', widget=forms.TextInput(
-        #attrs={'class': 'form-control', 'placeholder': 'Введите номер телефона'}), required=True)
-
-    #def __init__(self, *args, **kwargs):
-        #super(Order, self).__init__(self, *args, **kwargs)
-        #self.fields['current_date'].initial = d
 
     def __init__(self, *args, **kwargs):
         kwargs.update(initial={

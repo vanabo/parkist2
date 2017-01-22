@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1!o-i%!&h4l4$-8)&6-v4-m-@xk-=#ixtumq!17a2prjgfoya3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'desolate-bayou-65687.herokuapp.com',
