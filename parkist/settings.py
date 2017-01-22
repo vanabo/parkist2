@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1!o-i%!&h4l4$-8)&6-v4-m-@xk-=#ixtumq!17a2prjgfoya3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'desolate-bayou-65687.herokuapp.com',
@@ -60,12 +60,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'geoposition',
     'bootstrap3_datetime',
-    'materialdjango',
     'smsaero',
     'main'
 ]
 
-SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

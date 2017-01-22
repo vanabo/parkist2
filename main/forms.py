@@ -1,12 +1,8 @@
 from django import forms
-from geoposition.fields import GeopositionField
-from django.forms.extras.widgets import SelectDateWidget
 from django.forms import ModelForm
-from django.utils.translation import ugettext_lazy as _
 from bootstrap3_datetime.widgets import DateTimePicker
-from materialdjango.widgets import PhoneTextInput, PaperTextInput
 
-from . models import Order
+from . models import Order, CallBack2
 
 import datetime
 
@@ -27,7 +23,7 @@ mm = d.month
 class Order(ModelForm):
     class Meta:
         model = Order
-        fields = ['current_point', 'current_date', 'current_time', 'phone3']
+        fields = ['current_point', 'current_date', 'current_time', 'phone4']
         widgets = {
             'current_time': DateTimePicker(options={"format": "HH:mm", "pickSeconds": False,
                                                     "pickDate": False},
@@ -35,7 +31,6 @@ class Order(ModelForm):
                                            div_attrs={'class': 'input-group time'}),
             'current_date': DateTimePicker(options={"format": "DD-MM-YYYY", "pickTime": False}, icon_attrs = {'class': 'glyphicon glyphicon-date'},
                                            div_attrs = {'class': 'input-group date'}),
-            'phone3': PhoneTextInput,
         }
     class Media:
         css = {
@@ -63,6 +58,10 @@ class Order(ModelForm):
             'current_date': datetime.date.today()
         })
         super(Order, self).__init__(*args, **kwargs)
+        self.fields['phone4'].widget.attrs.update({
+            'class': 'form-control',
+            'id': 'phone',
+        })
 
     def clean_current_time(self, *args, **kwargs):
         current_time = self.cleaned_data.get('current_time')
@@ -80,7 +79,17 @@ class Order(ModelForm):
             raise forms.ValidationError('Выберите, пожалуйста, будний день')
         return current_date
 
+class CallBack2(ModelForm):
+    class Meta:
+        model = CallBack2
+        fields = ['name', 'phone']
 
-class CallBack2(forms.Form):
-    name = forms.CharField(label='Ваше Имя', widget=PaperTextInput, max_length=100, required=False)
-    phone = forms.CharField(label='Телефон', widget=PhoneTextInput, max_length=13, required = True)
+    def __init__(self, *args, **kwargs):
+        super(CallBack2, self).__init__(*args, **kwargs)
+        self.fields['phone'].widget.attrs.update({
+            'class': 'form-control',
+            'id': 'phone2',
+        })
+        self.fields['name'].widget.attrs.update({
+            'class': 'form-control',
+        })

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-{% load polymerdep %}
 <html>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Parkist - Живая парковка в Москве</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.js"></script>
+  <script src="{% static 'main/js/jquery.maskedinput.js' %}"></script>
   <script src="{% static 'bootstrap3_datetime/js/moment.min.js' %}"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="shortcut icon" href="{% static 'main/css/img/favicon.ico' %}" type="image/x-icon">
@@ -17,11 +17,6 @@
   <script src="{% static 'bootstrap3_datetime/js/bootstrap-datetimepicker.js' %}"></script>
   <script src="{% static 'bootstrap3_datetime/js/locales/bootstrap-datetimepicker.ru.js' %}"></script>
   <link rel="stylesheet" href="{% static 'bootstrap3_datetime/css/bootstrap-datetimepicker.css' %}">
-  <script src="{% static 'materialdjango/components/bower_components/webcomponentsjs/webcomponents-lite.js' %}"></script>
-  {{ form.media }}
-  {{ "polymer/polymer.html" |dep}}
-  {{ "paper-input/paper-input-container.html" |dep}}
-  {{ "gold-phone-input/gold-phone-input.html" |dep}}
   <meta name="mailru-domain" content="3e71CWd3hLMGIDj5" />
 </head>
 
@@ -72,12 +67,12 @@
     <div class="container-fluid">
     <div class="row">
          <a name="order"></a>
-        <div class="block-form col-md-4 col-md-offset-4 col-sm-6 col-xs-12">
+        <div class="block-form col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
             <div class="heading">
                 <h2>Вызвать Паркиста</h2>
             </div>
 <form action="/#order" role="form" id="contactForm" method="POST">
-
+    {{ form.media }}
     {% csrf_token %}
     {% if success %}
     <div class="bg-success">
@@ -114,13 +109,17 @@
       </div>
   </div>
     <div class="form-group">
-    <label for="form.phone3.id_for_label">Телефон*</label>
-    {% if form.phone3.errors %}
+    <label for="form.phone4.id_for_label">Телефон*</label>
+    {% if form.phone4.errors %}
         <div class="bg-danger">
-    {{ form.phone3.errors }}
+    {{ form.phone4.errors }}
         </div>
-        {% endif %}
-    {{ form.phone3 }}
+    {% endif %}
+    {{ form.phone4 }}
+    <script>
+       jQuery(function($){
+       $("#phone").mask("+7 999-999-9999");
+    });</script>
   </div>
     <div class="form-group block-button block-center"><input type="submit" name="submit3" class="button-orange" value="Вызвать Паркиста" /></div>
 
@@ -287,7 +286,7 @@
     <div class="container-fluid">
     <div class="row">
         <a name="callback"></a>
-        <div class="block-form col-md-4 col-md-offset-4 col-sm-6 col-xs-12">
+        <div class="block-form col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
             <div id="triangle-down"></div>
             <div class="heading">
                 <h2>Остались вопросы?</h2>
@@ -320,11 +319,11 @@
         <div class="footer">
         <div class="footer-block1 col-md-4"><img src="{% static 'main/css/img/logo.png' %}" /></div>
         <div class="footer-block2 col-md-4">
-            <div class="social-icon"><img src="{% static 'main/css/img/vk.png' %}"/></div>
-            <div class="social-icon"><img src="{% static 'main/css/img/ok.png' %}"/></div>
-            <div class="social-icon"><img src="{% static 'main/css/img/fb.png' %}"/></div>
-            <div class="social-icon"><img src="{% static 'main/css/img/in.png' %}"/></div>
-            <div class="social-icon"><img src="{% static 'main/css/img/tw.png' %}"/></div>
+            <div class="social-icon"><a href="https://vk.com/parkist"><img src="{% static 'main/css/img/vk.png' %}"/></a></div>
+            <div class="social-icon"><a href="https://ok.ru/group/53121181810837"><img src="{% static 'main/css/img/ok.png' %}"/></a></div>
+            <div class="social-icon"><a href="https://facebook.com/parkist.ru"><img src="{% static 'main/css/img/fb.png' %}"/></a></div>
+            <div class="social-icon"><a href="https://instagram.com/parkist.ru"><img src="{% static 'main/css/img/in.png' %}"/></a></div>
+            <div class="social-icon"><a href="https://twitter.com/PARKISTRU"><img src="{% static 'main/css/img/tw.png' %}"/></a></div>
         </div>
         <div class="footer-block3 col-md-4">+7(495)506-76-18<br><span>info@parkist.ru</span></div>
         </div>
@@ -352,7 +351,6 @@
     </div>
   </div>
 </div>
-
 
 </body>
 </html>

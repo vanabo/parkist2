@@ -2,7 +2,6 @@ Django==1.10.5
 django-bootstrap3-datetimepicker-2==2.4.2
 django-geoposition==0.3.0
 gunicorn==19.6.0
-MaterialDjango==0.2.3
 pytz==2016.10
 requests==2.12.4
 urllib3==1.19.1
