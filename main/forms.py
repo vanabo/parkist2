@@ -29,7 +29,7 @@ class Order(ModelForm):
                                                     "pickDate": False},
                                            icon_attrs={'class': 'glyphicon glyphicon-time'},
                                            div_attrs={'class': 'input-group time'}),
-            'current_date': DateTimePicker(options={"format": "DD-MM-YYYY", "pickTime": False}, icon_attrs = {'class': 'glyphicon glyphicon-date'},
+            'current_date': DateTimePicker(options={"pickTime": False}, icon_attrs = {'class': 'glyphicon glyphicon-date'},
                                            div_attrs = {'class': 'input-group date'}),
         }
     class Media:
