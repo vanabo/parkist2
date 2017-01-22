@@ -30,8 +30,8 @@ if (jQuery != undefined) {
 
         $('.geoposition-widget').each(function() {
             var $container = $(this),
-                $mapContainer = $('<div class="geoposition-map2" />'),
                 $addressRow = $('<div class="geoposition-address2" />'),
+                $mapContainer = $('<div class="geoposition-map2" />'),
                 $searchRow = $('<div class="form-group geoposition-search2" />'),
                 $searchInput = $('<input>', {'type': 'search', 'placeholder': 'Введите адрес, где Вас встретит Паркист'}),
                 $latitudeField = $container.find('input.geoposition:eq(0)'),
@@ -120,7 +120,7 @@ if (jQuery != undefined) {
                 $(this).parent().find('ul.geoposition-results').remove();
             });
             $searchInput.appendTo($searchRow);
-            $container.append($searchRow, $mapContainer, $addressRow);
+            $container.append($searchRow, $addressRow, $mapContainer);
 
             mapLatLng = new google.maps.LatLng(latitude, longitude);
 
