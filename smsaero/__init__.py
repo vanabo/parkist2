@@ -20,7 +20,7 @@ class SmsAeroHTTPError(SmsAeroError):
 
 class SmsAero(object):
     URL_GATE = 'http://gate.smsaero.ru/'
-    SIGNATURE = 'NEWS'
+    SIGNATURE = 'Parkist'
     DIGITAL = 0
     TYPE_SEND = 2
 

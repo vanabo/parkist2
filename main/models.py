@@ -1,9 +1,11 @@
 from django.db import models
 from geoposition.fields import GeopositionField
 
+import datetime
+
 class Order(models.Model):
     current_point = GeopositionField(blank=False)
-    current_date = models.DateField(blank=True)
+    current_date = models.DateField(blank=True, auto_now=True, auto_now_add=True, default=datetime.date.today())
     current_time = models.TimeField(blank=True)
     phone4 = models.CharField(max_length=15, blank=False)
 

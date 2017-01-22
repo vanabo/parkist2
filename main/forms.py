@@ -30,7 +30,7 @@ class Order(ModelForm):
     def __init__(self, *args, **kwargs):
         kwargs.update(initial={
             'current_time': datetime.datetime.now()+datetime.timedelta(minutes=15),
-            'current_date': datetime.date.today()
+            #'current_date': datetime.date.today()
         })
         super(Order, self).__init__(*args, **kwargs)
         self.fields['phone4'].widget.attrs.update({
