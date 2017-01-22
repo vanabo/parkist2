@@ -297,7 +297,7 @@ ul.errorlist li {
     padding-bottom:30px;
 }
 .pre-text span {
-    font-size: 1.4rem;
+    font-size: 2.0rem;
 }
 .block-pictures {
 display:flex;
@@ -342,6 +342,7 @@ text-align: center;
 .block-img p {
 color: #fff;
 margin-top: 25px;
+font-size: 1.5rem;
 }
 .block-how {
 background: #eee;
@@ -402,7 +403,7 @@ span.rub{
 .block-price p span.rub-small{
  display: inline-block;
  font-size: 2.1rem;
- line-height: 7px;
+ line-height: 5px;
  border-bottom: 2px solid #333;
 
 }
