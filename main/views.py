@@ -18,7 +18,7 @@ def index(request):
         form_phone4 = form.cleaned_data.get('phone4')
         subject = 'Parkist Заказ'
         from_email = settings.EMAIL_HOST_USER
-        to_email = ['nv@alltargets.ru'] #'igamer@mail.ru', '5067618@mail.ru']
+        to_email = ['nv@alltargets.ru', 'igamer@mail.ru', '5067618@mail.ru']
         form_phone42 = form_phone4.replace("-", "").replace(" ", "").replace("+", "")
         to_phone = '{0}'.format(form_phone42)
         contact_message = '{0} {1} {2} {3}'.format(form_current_point, form_current_date, form_current_time, to_phone)
@@ -52,7 +52,7 @@ def index(request):
         to_phone2 = '{0}'.format(form22_phone)
         subject3 = 'Parkist Обратный звонок'
         from_email = settings.EMAIL_HOST_USER
-        to_email = ['nv@alltargets.ru'] #'igamer@mail.ru', '5067618@mail.ru']
+        to_email = ['nv@alltargets.ru', 'igamer@mail.ru', '5067618@mail.ru']
         contact_message3 = '{0} {1}'.format(form2_name, to_phone2)
         send_mail(
             subject3,

@@ -38,12 +38,6 @@ class Order(ModelForm):
             'id': 'phone',
         })
 
-    def clean_current_point(self, *args, **kwargs):
-        current_point = self.cleaned_data.get('current_point')
-        if current_point == "":
-            raise forms.ValidationError('Введите, пожалуйста, адрес')
-        return current_point
-
     def clean_current_time(self, *args, **kwargs):
         current_time = self.cleaned_data.get('current_time')
         if current_time < datetime.time(hour=8, minute=0, second=0, microsecond=0, tzinfo=None) or current_time > datetime.time(hour=20, minute=0, second=0, microsecond=0, tzinfo=None):
