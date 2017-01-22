@@ -4,9 +4,10 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Parkist - Живая парковка в Москве</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.js"></script>
-    <script src="{% static 'bootstrap3_datetime/js/moment.min.js' %}"></script>
+  <script src="{% static 'bootstrap3_datetime/js/moment.min.js' %}"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="shortcut icon" href="{% static 'main/css/img/favicon.ico' %}" type="image/x-icon">
   <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
@@ -16,10 +17,11 @@
   <script src="{% static 'bootstrap3_datetime/js/bootstrap-datetimepicker.js' %}"></script>
   <script src="{% static 'bootstrap3_datetime/js/locales/bootstrap-datetimepicker.ru.js' %}"></script>
   <link rel="stylesheet" href="{% static 'bootstrap3_datetime/css/bootstrap-datetimepicker.css' %}">
-    {{ "polymer/polymer.html" |dep}}
-    {{ "gold-phone-input/gold-phone-input.html" |dep}}
-    {{ "paper-input/paper-input-container.html" |dep}}
-    {{ form.media }}
+  <script src="{% static 'materialdjango/components/bower_components/webcomponentsjs/webcomponents.js' %}"></script>
+  {{ form.media }}
+  {{ "polymer/polymer.html" |dep}}
+  {{ "paper-input/paper-input-container.html" |dep}}
+  {{ "gold-phone-input/gold-phone-input.html" |dep}}
   <meta name="mailru-domain" content="3e71CWd3hLMGIDj5" />
 </head>
 
