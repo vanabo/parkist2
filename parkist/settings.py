@@ -38,7 +38,7 @@ TIME_INPUT_FORMATS = [
     '%H:%M'
 ]
 
-GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyDLqdgdRPeKm-bfgXtaOQqQFsCH1FXHVPk'
+GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBKHQMr67GKPK6K-UvjfMCZtpACAC_e9n4'
 
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 2525
@@ -64,7 +64,7 @@ INSTALLED_APPS = [
     'main'
 ]
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
