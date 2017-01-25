@@ -483,6 +483,7 @@ margin-right: 15px;
     justify-content:space-between;
     flex-wrap: wrap;
     text-align:center;
+    overflow: hidden;
 }
 .block-footer {
 padding:15px;
