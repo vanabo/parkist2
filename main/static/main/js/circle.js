@@ -70,5 +70,5 @@ function init() {
     //  - drag - перемещение карты при нажатой левой кнопки мыши;
     //  - rightMouseButtonMagnifier - увеличение области, выделенной
     //    правой кнопкой мыши.
-    .disable(['drag', 'scrollZoom'])
+    .disable(['drag', 'scrollZoom', ])
 }
