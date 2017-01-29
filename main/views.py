@@ -21,7 +21,13 @@ def index(request):
         to_email = ['nv@alltargets.ru', 'igamer@mail.ru', '5067618@mail.ru']
         form_phone42 = form_phone4.replace("-", "").replace(" ", "").replace("+", "").replace("(", "").replace(")", "")
         to_phone = '{0}'.format(form_phone42)
-        contact_message = '{0} {1} {2} {3}'.format(form_current_point, form_current_date, form_current_time, to_phone)
+        coord = (form_current_point[0], form_current_point[1])
+        lat = '{0}'.format(form_current_point[0])
+        lon = '{0}'.format(form_current_point[1])
+        coord = {'lat':  lat, 'lon': lon}
+        map = 'https://www.maps.yandex.ru/?pt={lon},{lat}&zoom=13&l=map'.format(**coord)
+        geo = 'geo:{lat},{lon}?z=17'.format(**coord)
+        contact_message = '{0} {1} {2} {3} {4}'.format(form_current_point, form_current_date, form_current_time, to_phone, map)
         send_mail(
             subject,
             contact_message,
@@ -38,7 +44,7 @@ def index(request):
         api.sendtogroup(
             'main_group',
             contact_message
-        )
+       )
 
         success = 'Мы получили Вашу заявку. Ожидайте звонка!'
 

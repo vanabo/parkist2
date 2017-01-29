@@ -5,21 +5,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Parkist - Живая парковка в Москве</title>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.js"></script>
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="{% static 'main/js/jquery.maskedinput.js' %}"></script>
   <script src="{% static 'bootstrap3_datetime/js/moment.min.js' %}"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="shortcut icon" href="{% static 'main/css/img/favicon.ico' %}" type="image/x-icon">
-  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css">
+  <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
   <script src="{% static 'bootstrap3_datetime/js/bootstrap-datetimepicker.js' %}"></script>
   <script src="{% static 'bootstrap3_datetime/js/locales/bootstrap-datetimepicker.ru.js' %}"></script>
+  <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
   <link rel="stylesheet" href="{% static 'bootstrap3_datetime/css/bootstrap-datetimepicker.css' %}">
-    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    <script src="{% static 'main/js/circle.js' %}" type="text/javascript"></script>
+  <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="{% static 'main/js/circle.js' %}" type="text/javascript"></script>
+  <script src="{% static 'main/js/burger-menu.js' %}" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/burger-menu.css' %}">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css">
   <meta name="mailru-domain" content="3e71CWd3hLMGIDj5" />
+  <meta name='wmail-verification' content='6b91b413fef007b8723e55f9b21cbc0d' />
+  <meta name="yandex-verification" content="75e7807aa7e4cccc" />
+  <meta name="google-site-verification" content="VfdBuD7yNIMmlDcJJgiRFibDIczLCW7zqvIvdwlEX0I" />
 </head>
 
 <body>
@@ -65,22 +73,41 @@
 
 </script>
 
-    <ul class="navigation">
-        <li class="nav-item"><a href="#home">Главная</a></li>
-        <li class="nav-item"><a href="#how">Как это работает</a></li>
-        <li class="nav-item"><a href="#price">Цены</a></li>
-        <li class="nav-item"><a href="#order">Вызвать Паркиста</a></li>
-        <li class="nav-item"><a href="#callback">Обратный звонок</a></li>
-        <li class="nav-item"><a href="#contact">Контакты</a></li>
-    </ul>
+    <div id="sidedrawer" class="mui--no-user-select">
+      <div id="sidedrawer-brand" class="mui--appbar-line-height">
+        <span class="mui--text-title">Parkist.ru</span>
+      </div>
+      <div class="mui-divider"></div>
+      <ul>
+        <li>
+          <a href="#home">Главная</a>
+        </li>
+        <li>
+          <a href="#how">Как это работает</a>
+        </li>
+        <li>
+          <a href="#price">Цены</a>
+        </li>
+          <li>
+          <a href="#order">Вызвать Паркиста</a>
+        </li>
+          <li>
+          <a href="#callback">Обратный звонок</a>
+        </li>
+          <li>
+          <a href="#contact">Контакты</a>
+        </li>
+      </ul>
+    </div>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger"></label>
-
-<div class="site-wrap">
-<div class="header">
-    <div class="block-header-wrap">
-    <div class="block-logo col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-5 col-xs-offset-1">
+<header id="header">
+      <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <div class="block-header-whole">
+          <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+          <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-show-sidedrawer">☰</a>
+          <div class="block-header-wrap">
+    <div class="block-logo col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-5">
     <a href="/"><img src="{% static 'main/css/img/logo.png' %}" align="center" /></a>
     </div>
     <div class="block-contact col-md-4 col-sm-4 col-xs-9">
@@ -90,8 +117,14 @@
         <div class="call-back"><a href="#myModal" data-toggle="modal" >Обратный звонок</a></div>
     </div>
     </div>
- </div>
+        </div>
+      </div>
+      </div>
+    </header>
 
+    <div id="content-wrapper">
+      <div class="mui--appbar-height"></div>
+      <div class="mui-container-fluid">
      <a name="home"></a>
     <div class="block-slide">
         <div class="block-slog col-md-4 col-md-offset-2 col-sm-6 col-xs-12">
@@ -110,7 +143,7 @@
     <div class="container-fluid">
     <div class="row">
          <a name="order"></a>
-        <div class="block-form col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
+        <div class="block-form col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
             <div class="heading">
                 <h2>Вызвать Паркиста</h2>
             </div>
@@ -151,6 +184,13 @@
     {{ form.current_date }}
       </div>
   </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker11').datetimepicker({
+                daysOfWeekDisabled: [0, 6]
+            });
+        });
+    </script>
     <div class="form-group">
     <label for="form.phone4.id_for_label">Телефон*</label>
     {% if form.phone4.errors %}
@@ -159,8 +199,12 @@
         </div>
     {% endif %}
     {{ form.phone4 }}
-
-  </div>
+        <script>
+        $(function(){
+          $("#phone").mask("+7 (999) 999-9999");
+        });
+        </script>
+    </div>
     <div class="form-group block-button block-center"><input type="submit" name="submit3" class="button-orange" value="Вызвать Паркиста" /></div>
 
 </form> 
@@ -326,7 +370,7 @@
     <div class="container-fluid">
     <div class="row">
         <a name="callback"></a>
-        <div class="block-form col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
+        <div class="block-form col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
             <div id="triangle-down"></div>
             <div class="heading">
                 <h2>Остались вопросы?</h2>
@@ -357,9 +401,13 @@
         </div>
     </div>
     </div>
+    </div>
+    </div>
     <div class="container-fluid">
     <div class="row">
-        <div class="footer">
+    <footer id="footer">
+      <div class="mui-container-fluid">
+      <div class="block-footer col-md-12 col-sm-12 col-xs-12">
         <div class="footer-block1 col-md-4"><img src="{% static 'main/css/img/logo.png' %}" /></div>
         <div class="footer-block2 col-md-4">
             <div class="social-icon"><a href="https://vk.com/parkist"><img src="{% static 'main/css/img/vk.png' %}"/></a></div>
@@ -370,14 +418,15 @@
         </div>
         <div class="footer-block3 col-md-4">+7(495)506-76-18<br><span>info@parkist.ru</span></div>
         </div>
-
-        <div class="block-footer col-md-12 col-sm-12 col-xs-12">
+        <div class="block-footer2 col-md-12 col-sm-12 col-xs-12">
             Интернет-сайт носит исключительно информационный характер и&nbsp;ни&nbsp;при каких условиях не&nbsp;является публичной офертой (ст. 437&nbsp;ГК РФ).<br>
             Копирование материалов без разрешения запрещено.
         </div>
+      </div>
+    </footer>
     </div>
     </div>
-    </div>
+
 
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -394,6 +443,23 @@
     </div>
   </div>
 </div>
+<script id='chat-2-desk-widget-code' type="text/javascript">
+function chat2deskWidgetRun() {
+window['cha'+'t2d'+'e'+'skID'] = '0178f88efb0f7a78b048594a5fb09869';
+window.domain = 'https://chat2desk.com';
+var sc = document.createElement('script');
+sc.type = 'text/javascript';
+sc.async = true;
+sc.src = window.domain + '/js/widget/new/dist/widget.min.js';
 
+var c = document['getElement'+'sByTagNa'+'me']('script')[0];
+if ( c ) c['p'+'arent'+'Node']['inser'+'tB'+'efo'+'re'](sc, c);
+else document['docu'+'me'+'ntEle'+'m'+'ent']['f'+'i'+'r'+'s'+'tChi'+'ld']['appe'+'nd'+'C'+'hild'](sc);
+}
+window.chat2deskWidgetCanRun = true;
+if (window.chat2deskWidgetCanRun) {
+    chat2deskWidgetRun();
+}
+</script>
 </body>
 </html>
