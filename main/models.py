@@ -1,8 +1,6 @@
 from django.db import models
 from geoposition.fields import GeopositionField
 
-import datetime
-
 class Order(models.Model):
     current_point = GeopositionField(blank=False)
     current_date = models.DateField(blank=True)

@@ -38,11 +38,11 @@ class Order(ModelForm):
             'id': 'phone',
         })
 
-    def clean_current_time(self, *args, **kwargs):
-        current_time = self.cleaned_data.get('current_time')
-        if current_time < datetime.time(hour=8, minute=0, second=0, microsecond=0, tzinfo=None) or current_time > datetime.time(hour=20, minute=0, second=0, microsecond=0, tzinfo=None):
-            raise forms.ValidationError('Введите, пожалуйста, требуемое время парковки в рабочие часы с 8:00 до 20:00')
-        return current_time
+    #def clean_current_time(self, *args, **kwargs):
+        #current_time = self.cleaned_data.get('current_time')
+        #if current_time < datetime.time(hour=8, minute=0, second=0, microsecond=0, tzinfo=None) or current_time > datetime.time(hour=20, minute=0, second=0, microsecond=0, tzinfo=None):
+            #raise forms.ValidationError('Введите, пожалуйста, требуемое время парковки в рабочие часы с 8:00 до 20:00')
+        #return current_time
 
 class CallBack2(ModelForm):
     class Meta:

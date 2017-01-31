@@ -21,7 +21,6 @@ def index(request):
         to_email = ['nv@alltargets.ru', 'igamer@mail.ru', '5067618@mail.ru']
         form_phone42 = form_phone4.replace("-", "").replace(" ", "").replace("+", "").replace("(", "").replace(")", "")
         to_phone = '{0}'.format(form_phone42)
-        coord = (form_current_point[0], form_current_point[1])
         lat = '{0}'.format(form_current_point[0])
         lon = '{0}'.format(form_current_point[1])
         coord = {'lat':  lat, 'lon': lon}
@@ -66,11 +65,6 @@ def index(request):
             from_email,
             to_email,
             fail_silently=True,
-        )
-
-        api.sendtogroup(
-            'main_group',
-            contact_message3
         )
 
         success2 = 'Спасибо за заявку! Ждите звонка!'
