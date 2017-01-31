@@ -4,7 +4,6 @@ if (jQuery != undefined) {
     }
 }
 
-
 (function($) {
 
     $(document).ready(function() {
@@ -12,7 +11,7 @@ if (jQuery != undefined) {
         try {
             var _ = google;
         } catch (ReferenceError) {
-            console.log('geoposition: Вы должны быть подключены к интернету.');
+            console.log('geoposition: "google" not defined.  You might not be connected to the internet.');
             return;
         }
 
@@ -30,9 +29,9 @@ if (jQuery != undefined) {
 
         $('.geoposition-widget').each(function() {
             var $container = $(this),
-                $mapContainer = $('<div class="geoposition-map2" />'),
-                $addressRow = $('<div class="geoposition-address2" />'),
-                $searchRow = $('<div class="form-group geoposition-search2" />'),
+                $mapContainer = $('<div class="geoposition-map" />'),
+                $addressRow = $('<div class="geoposition-address" />'),
+                $searchRow = $('<div class="geoposition-search" />'),
                 $searchInput = $('<input>', {'type': 'search', 'class': 'form-control', 'placeholder': 'Введите адрес, где Вас встретит Паркист'}),
                 $latitudeField = $container.find('input.geoposition:eq(0)'),
                 $longitudeField = $container.find('input.geoposition:eq(1)'),

@@ -9,7 +9,7 @@ input.geoposition {
     color: #333;
 }
 
-.geoposition-map2 {
+.geoposition-map {
     position: relative;
     margin: 6px 0;
     clear: both;
@@ -29,7 +29,7 @@ input.geoposition {
     vertical-align: middle;
 }
 
-.geoposition-search2 {
+.geoposition-search {
     display: block;
     width: 100%;
     height: 34px;
@@ -44,16 +44,16 @@ input.geoposition {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
-.geoposition-search2 input {
+.geoposition-search input {
     width: 100%;
 }
 
-.geoposition-address2 {
+.geoposition-address {
     float: left;
     text-align: left;
 }
 
-.geoposition-search2 {
+.geoposition-search {
     text-align: left;
 }
 
