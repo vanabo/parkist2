@@ -16,6 +16,7 @@ def index(request):
         form_current_date = form.cleaned_data.get('current_date')
         form_current_time = form.cleaned_data.get('current_time')
         form_phone4 = form.cleaned_data.get('phone4')
+        form_promo = form.cleaned_data.get('promo')
         subject = 'Parkist Заказ'
         from_email = settings.EMAIL_HOST_USER
         to_email = ['nv@alltargets.ru', 'igamer@mail.ru', '5067618@mail.ru']
@@ -26,7 +27,7 @@ def index(request):
         coord = {'lat':  lat, 'lon': lon}
         map = 'https://www.maps.yandex.ru/?pt={lon},{lat}&zoom=13&l=map'.format(**coord)
         geo = 'geo:{lat},{lon}?z=17'.format(**coord)
-        contact_message = '{0} {1} {2} {3} {4}'.format(form_current_point, form_current_date, form_current_time, to_phone, map)
+        contact_message = '{0} {1} {2} {3} {4}'.format(form_current_point, form_current_date, form_current_time, to_phone, map, form_promo)
         send_mail(
             subject,
             contact_message,

@@ -459,6 +459,23 @@ height: 130px;
 padding-top: 60px;
 text-align:center;
 }
+
+.block-sharing {
+background: #eeeeee;
+margin-bottom: 30px;
+}
+.heading3 {
+padding-bottom:20px;
+padding-top:20px;
+text-align: center;
+}
+.ya-share2 {
+text-align: center;
+padding-bottom: 30px;
+}
+.ya-share2__badge {
+margin-bottom: 10px;
+}
 .black-text {
 color: #333;
 font-size: 1.8rem;
@@ -563,6 +580,10 @@ padding:10px;
 @media (max-width: 540px) {
 .block-logo img {
 width: 110px;
+}
+.first {
+display: block;
+max-width: 340px;
 }
 .call-back a {
 font-size: 1.3rem;

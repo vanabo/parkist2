@@ -9,7 +9,7 @@ import datetime
 class Order(ModelForm):
     class Meta:
         model = Order
-        fields = ['current_point', 'current_date', 'current_time', 'phone4']
+        fields = ['current_point', 'current_date', 'current_time', 'phone4', 'promo']
         widgets = {
             'current_time': DateTimePicker(options={"format": "HH:mm", "pickSeconds": False,
                                                     "pickDate": False},
@@ -36,6 +36,9 @@ class Order(ModelForm):
         self.fields['phone4'].widget.attrs.update({
             'class': 'form-control',
             'id': 'phone',
+        })
+        self.fields['promo'].widget.attrs.update({
+            'class': 'form-control',
         })
 
     #def clean_current_time(self, *args, **kwargs):
