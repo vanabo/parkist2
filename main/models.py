@@ -6,11 +6,10 @@ class Order(models.Model):
     current_date = models.DateField(blank=True)
     current_time = models.TimeField(blank=True)
     phone4 = models.CharField(max_length=17, blank=False)
-    promo = models.CharField(max_length=6, blank=True)
+    promo = models.CharField(max_length=8, blank=True)
 
 class CallBack2(models.Model):
     name = models.CharField(max_length=50, blank=True)
     phone = models.CharField(max_length=17, blank=False)
-
 
 

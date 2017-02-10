@@ -187,7 +187,7 @@ color: #333;
 display:flex;
 flex-direction: column;
 margin-top:0px;
-height:650px;
+height:750px;
 background: url("img/52372461.jpg") no-repeat center;
 background-size: cover;
 }
@@ -462,7 +462,7 @@ text-align:center;
 
 .block-sharing {
 background: #eeeeee;
-margin-bottom: 30px;
+padding-bottom: 40px;
 }
 .heading3 {
 padding-bottom:20px;
@@ -480,6 +480,15 @@ margin-bottom: 10px;
 color: #333;
 font-size: 1.8rem;
 margin-top: 25px;
+}
+.block-center2 {
+text-align: center;
+background: #eeeeee;
+padding-bottom: 30px;
+}
+.block-center2 h4 {
+display: block;
+padding-bottom:15px;
 }
 .white-text {
 color: #fff;
@@ -581,6 +590,9 @@ padding:10px;
 .block-logo img {
 width: 110px;
 }
+.block-slide {
+height:600px;
+}
 .first {
 display: block;
 max-width: 340px;
@@ -589,7 +601,7 @@ max-width: 340px;
 font-size: 1.3rem;
 }
 .phone {
-font-size: 1.6rem;
+font-size: 1.5rem;
 }
 .date-time {
     display: flex;
@@ -610,5 +622,79 @@ border: none;
 .modal-footer {
 border: none;
 text-align:center;
+}
+
+@media (min-width: 1400px) {
+.block-slide {
+height: 1080px;
+}
+}
+
+/* become-parkist */
+
+body.blue {
+background: #00736f;
+}
+
+a.work-footer {
+display: block;
+margin: 10px auto;
+width: 160px;
+padding: 7px 15px;
+border: 2px #da940d solid;
+border-radius: 5px;
+cursor: pointer;
+font-size: 1.4rem;
+}
+
+#footer a.work-footer {
+text-decoration: none;
+}
+
+.parkist-work {
+text-align: center;
+background: #00736f;
+}
+
+.block-form-parkist {
+margin-top: 8%;
+background: #00736f;
+color: #fff;
+padding: 15px;
+}
+
+.block-form-parkist span {
+display: block;
+margin: 0 auto;
+text-align: center;
+font-size: 14px;
+padding-top: 30px;
+}
+
+.company-main {
+font-size: 22px;
+}
+
+.block-form-parkist .form-group {
+margin-top:70px;
+}
+
+.block-form-parkist .radio-inline, .block-form-parkist .checkbox-inline {
+display: block;
+}
+
+/*term*/
+
+.block-footer2 a {
+font-size:1.2rem;
+}
+.block-term {
+padding-top:50px;
+padding-bottom:50px;
+max-width:1000px;
+margin:0 auto;
+}
+.left-margin {
+margin-left: 30px;
 }
 

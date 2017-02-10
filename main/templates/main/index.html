@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Parkist - Живая парковка в Москве</title>
+  <meta name="description" content="Тяжело припарковаться в центре города? Паркист позаботится о Вашем автомобиле. Вы передаете и забираете машину в любом удобном Вам месте!" />
+  <meta name="keywords" content="паркист, parkist, живая парковка, парковка в москве" />
   <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="{% static 'main/js/jquery.maskedinput.js' %}"></script>
   <script src="{% static 'bootstrap3_datetime/js/moment.min.js' %}"></script>
@@ -29,6 +31,21 @@
   <meta name='wmail-verification' content='6b91b413fef007b8723e55f9b21cbc0d' />
   <meta name="yandex-verification" content="75e7807aa7e4cccc" />
   <meta name="google-site-verification" content="VfdBuD7yNIMmlDcJJgiRFibDIczLCW7zqvIvdwlEX0I" />
+  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '509242749201700'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
 </head>
 
 <body>
@@ -128,7 +145,7 @@
       <div class="mui-container-fluid">
      <a name="home"></a>
     <div class="block-slide">
-        <div class="block-slog col-md-4 col-md-offset-2 col-sm-6 col-xs-8">
+        <div class="block-slog col-md-4 col-md-offset-2 col-sm-6 col-xs-9">
         <h1 class="first">Живая Парковка</h1>
         <div class="second">в Москве</div>
 
@@ -148,7 +165,8 @@
             <div class="heading">
                 <h2>Вызвать Паркиста</h2>
             </div>
-<form action="/#order" role="form" id="contactForm" method="POST">
+<form action="/#order" role="form" id="contactForm" method="POST" onsubmit="fbq('track', 'Lead'); yaCounter41839079.reachGoal('order'); ga('send', 'event', 'orders', 'website', 'order'); return true;">
+
     {{ form.media }}
     {% csrf_token %}
     {% if success %}
@@ -205,13 +223,13 @@
     </div>
     <div class="form-group block-button block-center"><input type="submit" name="submit3" class="button-orange" value="Вызвать Паркиста" /></div>
 
-</form> 
+</form>
 
         </div>
     </div>
 </div>
     <div class="container-fluid">
-    <div class="row">         
+    <div class="row">
         <div class="block-pictures col-md-12 col-sm-12 col-xs-12">
             <div class="block-img col-md-2 col-md-offset-2  col-sm-3 col-xs-6">
                 <div class="img-square"><img  src="{% static 'main/css/img/icon1.png' %}" align="center" /></div>
@@ -219,11 +237,11 @@
             </div>
             <div class="block-img col-md-2 col-sm-3 col-xs-6">
                 <div class="img-square"><img  src="{% static 'main/css/img/icon2.png' %}" align="center" /></div>
-                <p>с&nbsp;8:00 до&nbsp;20:00</p>
+                <p>с&nbsp;12:00 до&nbsp;22:00</p>
             </div>
             <div class="block-img col-md-2 col-sm-3 col-xs-6">
                 <div class="img-square"><img  src="{% static 'main/css/img/icon3.png' %}" align="center" /></div>
-                <p>Водители со&nbsp;стажем<br>вождения</p>
+                <p>Водители<br>со&nbsp;стажем</p>
             </div>
             <div class="block-img col-md-2 col-sm-3 col-xs-6">
                 <div class="img-square"><img  src="{% static 'main/css/img/icon4.png' %}" align="center" /></div>
@@ -372,8 +390,9 @@
             <div class="heading3">
                 <h2>Расскажите о нас всему Миру!</h2>
             </div>
-<div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,delicious,digg,reddit,evernote,linkedin,lj,pocket,qzone,renren,sinaWeibo,surfingbird,tencentWeibo,tumblr,viber,whatsapp,skype,telegram"></div>
-        </div>
+<div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,evernote,linkedin,viber,whatsapp,skype,telegram"></div>
+
+          </div>
     </div>
     </div>
     <div class="container-fluid">
@@ -386,7 +405,7 @@
             </div>
             <div class="pre-text">
             Позвоните по телефону<br><span>+7 (495) 506-76-18</span><br>или заполните форму ниже и&nbsp;мы&nbsp;перезвоним Вам в&nbsp;течение 5&nbsp;минут!
-            
+
             </div>
             {% include "main/form_snippet.html" with form=form2 method='POST' action="/#callback" %}
         </div>
@@ -397,18 +416,25 @@
         <a name="contact"></a>
         <div class="block-map col-md-12 col-sm-12 col-xs-12">
             <div id="map" style="height: 100%;"></div>
-    
-    
+
+
             <div class="block-table col-md-4 col-md-offset-8 col-sm-5 col-sm-offset-6 col-xs-12">
                 <h3>Зона Живой Парковки</h3>
                 <p>Время работы:<br>
-                <span>8:00 - 20:00</span></p>
+                <span>12:00 - 22:00</span></p>
                 <div class="block-button">
                     <a href="#order" class="button-orange">Вызвать Паркиста</a>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    </div>
+      <div class="container-fluid">
+    <div class="row">
+      <!-- Change the width and height values to suit you best -->
+<div class="typeform-widget" data-url="https://vanabo.typeform.com/to/JhgF22" data-text="Опрос" style="width:100%;height:350px;"></div>
+<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
     </div>
     </div>
     </div>
@@ -425,11 +451,10 @@
             <div class="social-icon"><a href="https://instagram.com/parkist.ru"><img src="{% static 'main/css/img/in.png' %}"/></a></div>
             <div class="social-icon"><a href="https://twitter.com/PARKISTRU"><img src="{% static 'main/css/img/tw.png' %}"/></a></div>
         </div>
-        <div class="footer-block3 col-md-4">+7(495)506-76-18<br><span>info@parkist.ru</span></div>
+          <div class="footer-block3 col-md-4">+7 (495) 506-76-18<br><span><a href="mailto:info@parkist.ru">info@parkist.ru</a></span><br><a class="work-footer" href="/become-parkist">Стать Паркистом</a></a></div>
         </div>
         <div class="block-footer2 col-md-12 col-sm-12 col-xs-12">
-            Интернет-сайт носит исключительно информационный характер и&nbsp;ни&nbsp;при каких условиях не&nbsp;является публичной офертой (ст. 437&nbsp;ГК РФ).<br>
-            Копирование материалов без разрешения запрещено.
+            <a href="legal/taxi_termsofuse">Пользовательское соглашение</a>
         </div>
       </div>
     </footer>
