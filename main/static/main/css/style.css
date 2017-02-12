@@ -691,6 +691,8 @@ font-size:1.2rem;
 .block-term {
 padding-top:50px;
 padding-bottom:50px;
+padding-left: 15px;
+padding-right: 15px;
 max-width:1000px;
 margin:0 auto;
 }
