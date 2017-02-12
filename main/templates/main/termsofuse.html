@@ -5,30 +5,50 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Parkist - Живая парковка в Москве</title>
-  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="{% static 'main/js/jquery.maskedinput.js' %}"></script>
-  <script src="{% static 'bootstrap3_datetime/js/moment.min.js' %}"></script>
+  <meta name="description" content="Тяжело припарковаться в центре города? Паркист позаботится о Вашем автомобиле. Вы передаете и забираете машину в любом удобном Вам месте!" />
+  <meta name="keywords" content="паркист, parkist, живая парковка, парковка в москве" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="{% static 'main/js/jquery-3.1.1.js' %}"></script>
+  <script src="{% static 'main/js/jquery-ui.js' %}"></script>
+  <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+  <script src="{% static 'main/js/collapse.js' %}"></script>
+  <script src="{% static 'main/js/transition.js' %}"></script>
+  <script src="{% static 'main/js/moment.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap-datetimepicker.ru.js' %}"></script>
+  <script src="{% static 'main/js/jquery.maskedinput.js' %}"></script>
+  <script src="{% static 'main/js/circle.js' %}" type="text/javascript"></script>
+  <script src="{% static 'main/js/burger-menu.js' %}" type="text/javascript"></script>
   <link rel="shortcut icon" href="{% static 'main/css/img/favicon.ico' %}" type="image/x-icon">
   <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-  <script src="{% static 'bootstrap3_datetime/js/bootstrap-datetimepicker.js' %}"></script>
-  <script src="{% static 'bootstrap3_datetime/js/locales/bootstrap-datetimepicker.ru.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap-datetimepicker.min.js' %}"></script>
   <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
   <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
   <script src="//yastatic.net/share2/share.js"></script>
-  <link rel="stylesheet" href="{% static 'bootstrap3_datetime/css/bootstrap-datetimepicker.css' %}">
-  <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-  <script src="{% static 'main/js/circle.js' %}" type="text/javascript"></script>
-  <script src="{% static 'main/js/burger-menu.js' %}" type="text/javascript"></script>
   <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
   <link rel="stylesheet" href="{% static 'main/css/burger-menu.css' %}">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="{% static 'main/css/bootstrap-datetimepicker.css' %}">
   <meta name="mailru-domain" content="3e71CWd3hLMGIDj5" />
   <meta name='wmail-verification' content='6b91b413fef007b8723e55f9b21cbc0d' />
   <meta name="yandex-verification" content="75e7807aa7e4cccc" />
   <meta name="google-site-verification" content="VfdBuD7yNIMmlDcJJgiRFibDIczLCW7zqvIvdwlEX0I" />
+  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '509242749201700'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
 </head>
 
 <body>
@@ -281,18 +301,28 @@ https://parkist.ru/legal/termsofuse/. Риск неознакомления с �
     <footer id="footer">
       <div class="mui-container-fluid">
       <div class="block-footer col-md-12 col-sm-12 col-xs-12">
-        <div class="footer-block1 col-md-4"><img src="{% static 'main/css/img/logo.png' %}" /></div>
-        <div class="footer-block2 col-md-4">
+        <div class="footer-block1 col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1"><img src="{% static 'main/css/img/logo.png' %}" />
+
+        </div>
+        <div class="footer-block2 col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1">
             <div class="social-icon"><a href="https://vk.com/parkist"><img src="{% static 'main/css/img/vk.png' %}"/></a></div>
             <div class="social-icon"><a href="https://ok.ru/group/53121181810837"><img src="{% static 'main/css/img/ok.png' %}"/></a></div>
             <div class="social-icon"><a href="https://facebook.com/parkist.ru"><img src="{% static 'main/css/img/fb.png' %}"/></a></div>
             <div class="social-icon"><a href="https://instagram.com/parkist.ru"><img src="{% static 'main/css/img/in.png' %}"/></a></div>
             <div class="social-icon"><a href="https://twitter.com/PARKISTRU"><img src="{% static 'main/css/img/tw.png' %}"/></a></div>
         </div>
-          <div class="footer-block3 col-md-4">+7 (495) 506-76-18<br><span><a href="mailto:info@parkist.ru">info@parkist.ru</a></span><br><a class="work-footer" href="/become-parkist">Стать Паркистом</a></a></div>
-        </div>
+          <div class="footer-block3 col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1">+7 (495) 506-76-18<br><span><a href="mailto:info@parkist.ru">info@parkist.ru</a></span><br><a class="work-footer" href="/become-parkist">Стать Паркистом</a></a>
+
+
+              </div></div>
+          <div class="footer-links col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1">
+              <a href="faq">ЧАВО</a><br>
+              <a href="for-business">Паркист для Бизнеса</a><br>
+              <a href="legal/termsofuse">Пользовательское соглашение</a>
+          </div>
+
         <div class="block-footer2 col-md-12 col-sm-12 col-xs-12">
-            <a href="legal/taxi_termsofuse">Пользовательское соглашение</a>
+
         </div>
       </div>
     </footer>

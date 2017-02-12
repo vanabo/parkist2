@@ -19,7 +19,7 @@ def index(request):
         form_promo = form.cleaned_data.get('promo')
         subject = 'Parkist Заказ'
         from_email = settings.EMAIL_HOST_USER
-        to_email = ['nv@alltargets.ru', 'igamer@mail.ru', '5067618@mail.ru', 'rlionia@gmail.com']
+        to_email = ['nv@alltargets.ru', 'igamer@mail.ru', '5067618@mail.ru', 'rlionia@gmail.com', 'ilyagamer@icloud.com']
         form_phone42 = form_phone4.replace("-", "").replace(" ", "").replace("+", "").replace("(", "").replace(")", "")
         to_phone = '{0}'.format(form_phone42)
         lat = '{0}'.format(form_current_point[0])
@@ -58,7 +58,7 @@ def index(request):
         to_phone2 = '{0}'.format(form22_phone)
         subject3 = 'Parkist Обратный звонок'
         from_email = settings.EMAIL_HOST_USER
-        to_email = ['nv@alltargets.ru', 'igamer@mail.ru', '5067618@mail.ru', 'rlionia@gmail.com']
+        to_email = ['nv@alltargets.ru', 'igamer@mail.ru', '5067618@mail.ru', 'rlionia@gmail.com', 'ilyagamer@icloud.com']
         contact_message3 = '{0} {1}'.format(form2_name, to_phone2)
         send_mail(
             subject3,
@@ -83,6 +83,10 @@ def index(request):
 def faq(request):
     context = {}
     return render(request, 'main/faq.html', context)
+
+def for_business(request):
+    context = {}
+    return render(request, 'main/for-business.html', context)
 
 def become_parkist(request):
     context = {}

@@ -19,7 +19,7 @@ elif (date.isoweekday() == 1 or date.isoweekday() == 2 or date.isoweekday() == 3
 elif (date.isoweekday() == 1 or date.isoweekday() == 2 or date.isoweekday() == 3 or date.isoweekday() == 4 or date.isoweekday() == 5) \
         and (time.hour == 22 or time.hour == 23 or time.hour == 20 or time.hour == 21):
     ttime = datetime.time(hour=12, minute=0, second=0, microsecond=0, tzinfo=None)
-    tdate = datetime.date.today()+datetime.timedelta(hours=2)
+    tdate = datetime.date.today()
 else:
     ttime = datetime.datetime.now()+datetime.timedelta(minutes=30)
     tdate = datetime.date.today()

@@ -5,30 +5,50 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Parkist - Живая парковка в Москве</title>
-  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="{% static 'main/js/jquery.maskedinput.js' %}"></script>
-  <script src="{% static 'bootstrap3_datetime/js/moment.min.js' %}"></script>
+  <meta name="description" content="Тяжело припарковаться в центре города? Паркист позаботится о Вашем автомобиле. Вы передаете и забираете машину в любом удобном Вам месте!" />
+  <meta name="keywords" content="паркист, parkist, живая парковка, парковка в москве" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="{% static 'main/js/jquery-3.1.1.js' %}"></script>
+  <script src="{% static 'main/js/jquery-ui.js' %}"></script>
+  <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+  <script src="{% static 'main/js/collapse.js' %}"></script>
+  <script src="{% static 'main/js/transition.js' %}"></script>
+  <script src="{% static 'main/js/moment.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap-datetimepicker.ru.js' %}"></script>
+  <script src="{% static 'main/js/jquery.maskedinput.js' %}"></script>
+  <script src="{% static 'main/js/circle.js' %}" type="text/javascript"></script>
+  <script src="{% static 'main/js/burger-menu.js' %}" type="text/javascript"></script>
   <link rel="shortcut icon" href="{% static 'main/css/img/favicon.ico' %}" type="image/x-icon">
   <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-  <script src="{% static 'bootstrap3_datetime/js/bootstrap-datetimepicker.js' %}"></script>
-  <script src="{% static 'bootstrap3_datetime/js/locales/bootstrap-datetimepicker.ru.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap-datetimepicker.min.js' %}"></script>
   <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
   <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
   <script src="//yastatic.net/share2/share.js"></script>
-  <link rel="stylesheet" href="{% static 'bootstrap3_datetime/css/bootstrap-datetimepicker.css' %}">
-  <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-  <script src="{% static 'main/js/circle.js' %}" type="text/javascript"></script>
-  <script src="{% static 'main/js/burger-menu.js' %}" type="text/javascript"></script>
   <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
   <link rel="stylesheet" href="{% static 'main/css/burger-menu.css' %}">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="{% static 'main/css/bootstrap-datetimepicker.css' %}">
   <meta name="mailru-domain" content="3e71CWd3hLMGIDj5" />
   <meta name='wmail-verification' content='6b91b413fef007b8723e55f9b21cbc0d' />
   <meta name="yandex-verification" content="75e7807aa7e4cccc" />
   <meta name="google-site-verification" content="VfdBuD7yNIMmlDcJJgiRFibDIczLCW7zqvIvdwlEX0I" />
+  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '509242749201700'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
 </head>
 
 <body>
@@ -74,48 +94,13 @@
 
 </script>
 
-    <div id="sidedrawer" class="mui--no-user-select">
-      <div id="sidedrawer-brand" class="mui--appbar-line-height">
-        <span class="mui--text-title">Parkist.ru</span>
-      </div>
-      <div class="mui-divider"></div>
-      <ul>
-        <li>
-          <a href="#home">Главная</a>
-        </li>
-        <li>
-          <a href="#how">Как это работает</a>
-        </li>
-        <li>
-          <a href="#price">Цены</a>
-        </li>
-          <li>
-          <a href="#order">Вызвать Паркиста</a>
-        </li>
-          <li>
-          <a href="#callback">Обратный звонок</a>
-        </li>
-          <li>
-          <a href="#contact">Контакты</a>
-        </li>
-      </ul>
-    </div>
-
 <header id="header">
       <div class="mui-appbar mui--appbar-line-height">
         <div class="mui-container-fluid">
             <div class="block-header-whole">
-          <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
-          <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-show-sidedrawer">☰</a>
           <div class="block-header-wrap">
     <div class="block-logo col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-5">
     <a href="/"><img src="{% static 'main/css/img/logo.png' %}" align="center" /></a>
-    </div>
-    <div class="block-contact col-md-4 col-sm-4 col-xs-9">
-        <div class="phone">
-        +7(495)506-76-18
-        </div>
-        <div class="call-back"><a href="#myModal" data-toggle="modal" >Обратный звонок</a></div>
     </div>
     </div>
         </div>
@@ -124,311 +109,106 @@
     </header>
 
     <div id="content-wrapper">
-      <div class="mui--appbar-height"></div>
-      <div class="mui-container-fluid">
-     <a name="home"></a>
-    <div class="block-slide">
-        <div class="block-slog col-md-4 col-md-offset-2 col-sm-6 col-xs-8">
-        <h1 class="first">Живая Парковка</h1>
-        <div class="second">в Москве</div>
-
-        <div class="slog">Тяжело припарковаться в&nbsp;центре города?<br>
-            Паркист позаботится о&nbsp;Вашем автомобиле.<br>
-            Вы&nbsp;передаете и&nbsp;забираете машину<br>в&nbsp;любом удобном Вам месте!</div>
-        <div class="block-button">
-            <a href="/#order" class="button-orange">Вызвать Паркиста</a>
+        <div class="block-term">
+        <h1>Чаво</h1>
+            <h3>Где паркист паркует мою машину?</h3>
+<p>В настоящее время мы оказываем услуги по принципу живой парковки, т.е. водитель
+находится с машиной все время парковки. Также мы выстраиваем отношения с
+несколькими коммерческими паркингами в центре Москвы, чтобы представить нашим
+пользователям новые удобные и выгодные услуги</p>
+            <h3>Как долго мне придется ждать паркиста?</h3>
+<p>Наша цель состоит в том, чтобы паркист прибыл в пункт назначения в течение 15 минут.
+Возврат автомобиля обратно в течение нескольких минут.</p>
+            <h3>Машины застрахованы?</h3>
+<p>Паркисты полностью отвечают за автомобиль во время вождения и ожидания. Наша
+политика включает в себя покрытие ответственности перед третьими лицами в размере до
+10 млн рублей. Просим Вас не оставлять ценные вещи в машине, как мы не можем взять на
+себя ответственность за ценные вещи. Вы должны сообщить нам в течение 24 часов
+завершения вашего заказа любого требованием о возмещении ущерба.</p>
+    <h3>Как отбираются паркисты?</h3>
+<p>Все наши водители (паркисты) успешно прошли экзамен по вождению и выполнению
+сложных парковочных маневров, у всех водителей имеется стаж вождения и большинство
+наших паркистов имеют профессиональный опыт вождения. Кроме того они были
+проверены основе всеобъемлющего теста третьей стороны, проверки судимости, записей
+об административных нарушениях, кредитной истории и их право на труд в Москве.</p>
+<p>Паркист проводит политику нулевой терпимости в отношении наркотиков и алкоголя.
+            <h3>Что делать, если телефон разрядился, когда машина с паркистом?</h3>
+<p>Вы можете обратиться в службу поддержки по телефону, указанному на сайте. Мы сообщим
+паркисту о необходимости возврата автомобиля.</p>
+    <h3>Что если я забыл что-то в моей машине?</h3>
+<p>Вы можете в любой момент позвонить паркисту, чтобы он вернулся.
+    <h3>Могу ли я отменить свой заказ?</h3>
+<p>Конечно. Если Вы передумали, то можете отменить свой заказ до прибытия паркиста на
+назначенное место в назначенное время.</p>
+    <h3>Где работает Паркист?</h3>
+<p>Паркист в скором времени будет предлагать свои услуги за пределами центра Москва. Вы
+можете увидеть точную область на главной странице сайта.</p>
+    <h3>Паркист работает только в Москве?</h3>
+<p>В настоящее время Паркист работает только в Москве. Если вы думаете, Паркист должен
+прийти в Ваш город, напишите нам на info@parkist.ru. Если вы хотите, чтобы помочь нам
+расширить в свой город, отправьте нам на partner@parkist.ru.</p>
+    <h3>Какие часы работы?</h3>
+<p>В настоящее время мы открыты с 12:00 утра до 22:00 вечера, с понедельника по пятницу.
+Если вы хотите использовать нас вне этих часов, пожалуйста, отправьте нам сообщение на
+info@parkist.ru, и мы сделаем все возможное, чтобы обслужить Вас.</p>
+    <h3>Можно оставить машину на ночь?</h3>
+<p>В качестве дополнительной услуги мы можем разместить автомобиль на ночь на платной
+парковке, стоимость услуги будет складываться из стоимость платной парковки и стоимости
+услуг паркиста.</p>
+    <h3>Сколько стоят услуги Паркист?</h3>
+<p>Стоимость живой парковки указана на сайте. Стоимость дополнительных услуг зависит от
+места парковки, Вы можете уточнить ее у паркиста при передаче автомобиля или позвоните
+нам по телефону, указанному на сайте.</p>
+    <h3>Как оплачиваются услуги?</h3>
+<p>Услуги оплачиваются водителю паркисту по факту оказания в наличной или безналичной
+форме. При заказе дополнительных услуг может потребоваться предварительная оплата.</p>
+    <h3>Как получить промо-код?</h3>
+<p>Вы можете получить промо-код, дающий право на бесплатную живую парковку, привлекая
+друзей и увидев специальную рекламу. Паркист также предлагает промо-коды в различные
+моменты времени, которые могут быть зарегистрированы при заказе услуг.</p>
+    <h3>Когда я могу использовать промо-код?</h3>
+            <p>Для разных промо-кодов устанавливаются свои правила по времени их использования.</p>
+    <h3>Какие дополнительные услуги?</h3>
+            <p>Мы предлагаем чистку стекол, автомойку, заправку топливом, «трезвый водитель».</p>
+<p>Например, посещая ресторан, Вы можете передать паркисту грязный автомобиль с пустым
+баком, а получить обратно чистую и полностью заправленную машину, на которой паркист
+сможет отвезти Вас домой, если Вы хотите отдохнуть от вождения по тем или иным
+            причинам.</p>
+    <h3>Какие устройства поддерживает Паркист?</h3>
+<p>Паркист в настоящее время доступен на всех устройствах с браузером, что является
+достаточным для наблюдения за перемещением автомобиля. В будущем Паркист будет
+    доступен для различных мобильных платформ, в том числе, iOS и Android.</p>
+    <h3>Остались вопросы?</h3>
+            <p>Напишите нам на info@parkist.ru и мы свяжемся с Вами в ближайшее время.</p>
+    </div>
         </div>
-    </div>
-    </div>
-
-    <div class="container-fluid">
-    <div class="row">
-         <a name="order"></a>
-        <div class="block-form col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
-            <div class="heading">
-                <h2>Вызвать Паркиста</h2>
-            </div>
-<form action="/#order" role="form" id="contactForm" method="POST">
-    {{ form.media }}
-    {% csrf_token %}
-    {% if success %}
-    <div class="bg-success">
-    {{ success }}
-    </div>
-    {% endif %}
-    {{ form.non_field_errors }}
-    <div class="form-group">
-    <label for="form.current_point.id_for_label">Укажите адрес*</label>
-    {% if form.current_point.errors %}
-        <div class="bg-danger">
-    {{ form.current_point.errors }}
-        </div>
-        {% endif %}
-    {{ form.current_point }}
-        <div class="help-map hidden-lg hidden-md hidden-sm">Масштабируйте и перемещайте карту двумя пальцами, перетащите флажок в место встречи</div>
-  </div>
-  <div class="form-group">
-    <label for="form.current_date.id_for_label">Время и дата*</label>
-      {% if form.current_date.errors %}
-      <div class="bg-danger">
-    {{ form.current_date.errors }}
-     </div>
-      {% endif %}
-      {% if form.current_time.errors %}
-      <div class="bg-danger">
-    {{ form.current_time.errors }}
-     </div>
-      {% endif %}
-
-      <div class="date-time">
-    {{ form.current_time }}
-    {{ form.current_date }}
-      </div>
-  </div>
-    <div class="form-group">
-    <label for="form.phone4.id_for_label">Телефон*</label>
-    {% if form.phone4.errors %}
-        <div class="bg-danger">
-    {{ form.phone4.errors }}
-        </div>
-    {% endif %}
-    {{ form.phone4 }}
-    </div>
-    <div class="form-group">
-    <label for="form.promo.id_for_label">Промокод (если есть)</label>
-    {% if form.promo.errors %}
-        <div class="bg-danger">
-    {{ form.promo.errors }}
-        </div>
-    {% endif %}
-    {{ form.promo }}
-    </div>
-    <div class="form-group block-button block-center"><input type="submit" name="submit3" class="button-orange" value="Вызвать Паркиста" /></div>
-
-</form>
-
-        </div>
-    </div>
-</div>
-    <div class="container-fluid">
-    <div class="row">
-        <div class="block-pictures col-md-12 col-sm-12 col-xs-12">
-            <div class="block-img col-md-2 col-md-offset-2  col-sm-3 col-xs-6">
-                <div class="img-square"><img  src="{% static 'main/css/img/icon1.png' %}" align="center" /></div>
-                <p>Забираем автомобиль<br> в&nbsp;течение 15&nbsp;минут</p>
-            </div>
-            <div class="block-img col-md-2 col-sm-3 col-xs-6">
-                <div class="img-square"><img  src="{% static 'main/css/img/icon2.png' %}" align="center" /></div>
-                <p>с&nbsp;12:00 до&nbsp;22:00</p>
-            </div>
-            <div class="block-img col-md-2 col-sm-3 col-xs-6">
-                <div class="img-square"><img  src="{% static 'main/css/img/icon3.png' %}" align="center" /></div>
-                <p>Водители<br>со&nbsp;стажем</p>
-            </div>
-            <div class="block-img col-md-2 col-sm-3 col-xs-6">
-                <div class="img-square"><img  src="{% static 'main/css/img/icon4.png' %}" align="center" /></div>
-                <p>Страховка<br>на&nbsp;10&nbsp;млн. рублей</p>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="container-fluid">
-    <div class="row">
-        <a name="how"></a>
-        <div class="block-how col-md-12 col-sm-12 col-xs-12">
-            <div id="triangle-down"></div>
-            <div class="heading">
-                    <h2>Как это работает?</h2>
-            </div>
-<div class="block-how-son">
-            <div class="block-how-img col-md-4 col-md-offset-2">
-                <img class="img-responsive" src="{% static 'main/css/img/map4.png' %}" />
-            </div>
-            <div class="block-how-text col-md-4">
-                <div class="one-icon"><img src="{% static 'main/css/img/one.png' %}" /></div>
-                <p>Укажите место в&nbsp;центре города,<br> где Паркист встретит Вас<br> и&nbsp;примет автомобиль</p>
-            </div>
-
-         </div>
-
-        </div>
-        </div></div>
-
-    <div class="container-fluid">
-    <div class="row">
-        <div class="block-how2 col-md-12 col-sm-12 col-xs-12">
-            <div class="block-how-son2">
-            <div class="block-how-text col-md-4 col-md-offset-2">
-                <div class="one-icon"><img src="{% static 'main/css/img/two.png' %}" /></div>
-                <p>Паркист все время с&nbsp;автомобилем,<br> и&nbsp;Вы можете видеть его местоположение</p>
-            </div>
-            <div class="block-how-img col-md-4">
-                <img class="img-responsive" src="{% static 'main/css/img/map5.png' %}" />
-            </div>
-            </div>
-
-         </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-    <div class="row">
-        <div class="block-how col-md-12 col-sm-12 col-xs-12">
-<div class="block-how-son">
-            <div class="block-how-img col-md-4 col-md-offset-2">
-                <img class="img-responsive" src="{% static 'main/css/img/map6.png' %}" />
-            </div>
-            <div class="block-how-text col-md-4">
-                <div class="one-icon"><img src="{% static 'main/css/img/three.png' %}" /></div>
-                <p>Когда Вы&nbsp;будете готовы,<br> Паркист подаст автомобиль ко&nbsp;входу<br> в&nbsp;течение 2&nbsp;минут
-            </div>
-            </div>
-         </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-    <div class="row">
-        <a name="price"></a>
-        <div class="block-price col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
-
-            <div class="heading">
-                    <h2>Сколько стоит Живая Парковка?</h2>
-            </div>
-
-            <div class="block-price-small">
-                390 <span class="rub">Р</span><br>
-                <span>за первый час</span>
-            </div>
-
-            <p>+7 <span class="rub-small">Р</span> в  минуту<br><span>со второго часа</span></p>
-
-        <div class="block-button">
-            <a href="#order" class="button-orange">Вызвать Паркиста</a>
-        </div>
-
-         </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-    <div class="row">
-        <div class="block-features col-md-12 col-sm-12 col-xs-12">
-            <div class="block-how-son">
-            <div class="block-features-text col-md-3 col-md-offset-2">
-                <h3>Проверенные Паркисты</h3>
-                <p>Все паркисты&nbsp;&mdash; профессиональные водители.<br>Прошли строгий отбор и&nbsp;проверку<br> службы безопасности.<br> Мы&nbsp;уделяем этому особое внимание
-                    </p>
-            </div>
-            <div class="block-features-img col-md-4">
-                <img class="img-responsive" src="{% static 'main/css/img/parkist.png' %}" />
-            </div>
-            </div>
-
-         </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-    <div class="row">
-        <div class="block-features2 col-md-12 col-sm-12 col-xs-12">
-            <div class="block-how-son2">
-            <div class="block-features-img col-md-4 col-md-offset-2">
-                <img class="img-responsive" src="{% static 'main/css/img/safety.png' %}" />
-            </div>
-
-            <div class="block-features-text col-md-4">
-                <h3>Безопасность</h3>
-                <p>Мы&nbsp;разработали систему защиты<br>секретными кодами при передаче<br> автомобиля и&nbsp;застраховали каждую<br> машину от&nbsp;ущерба на&nbsp;сумму<br>до&nbsp;10&nbsp;млн рублей.
-                    </p>
-            </div>
-            </div>
-
-         </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-    <div class="row">
-        <div class="services col-md-12 col-sm-12 col-xs-12">
-            <div class="heading2">
-                <h2>Дополнительные услуги</h2>
-            </div>
-            <div class="services1 col-md-4 col-md-offset-2 col-sm-6 col-xs-6">
-                <img src="{% static 'main/css/img/icon5.png' %}" />
-            <p class="black-text">Автомойка</p>
-            </div>
-            <div class="services2 col-md-4 col-sm-6 col-xs-6">
-                <img src="{% static 'main/css/img/icon6.png' %}" />
-            <p class="white-text">Заправка топливом</p>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="container-fluid">
-    <div class="row">
-        <div class="block-sharing col-md-12 col-sm-12 col-xs-12">
-            <div id="triangle-down"></div>
-            <div class="heading3">
-                <h2>Расскажите о нас всему Миру!</h2>
-            </div>
-<div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,evernote,linkedin,viber,whatsapp,skype,telegram"></div>
-        </div>
-    </div>
-    </div>
-    <div class="container-fluid">
-    <div class="row">
-        <a name="callback"></a>
-        <div class="block-form col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
-
-            <div class="heading">
-                <h2>Остались вопросы?</h2>
-            </div>
-            <div class="pre-text">
-            Позвоните по телефону<br><span>+7 (495) 506-76-18</span><br>или заполните форму ниже и&nbsp;мы&nbsp;перезвоним Вам в&nbsp;течение 5&nbsp;минут!
-
-            </div>
-            {% include "main/form_snippet.html" with form=form2 method='POST' action="/#callback" %}
-        </div>
-    </div>
-</div>
-    <div class="container-fluid">
-    <div class="row">
-        <a name="contact"></a>
-        <div class="block-map col-md-12 col-sm-12 col-xs-12">
-            <div id="map" style="height: 100%;"></div>
-
-
-            <div class="block-table col-md-4 col-md-offset-8 col-sm-5 col-sm-offset-6 col-xs-12">
-                <h3>Зона Живой Парковки</h3>
-                <p>Время работы:<br>
-                <span>12:00 - 22:00</span></p>
-                <div class="block-button">
-                    <a href="#order" class="button-orange">Вызвать Паркиста</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
     <div class="container-fluid">
     <div class="row">
     <footer id="footer">
       <div class="mui-container-fluid">
       <div class="block-footer col-md-12 col-sm-12 col-xs-12">
-        <div class="footer-block1 col-md-4"><img src="{% static 'main/css/img/logo.png' %}" /></div>
-        <div class="footer-block2 col-md-4">
+        <div class="footer-block1 col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1"><img src="{% static 'main/css/img/logo.png' %}" />
+
+        </div>
+        <div class="footer-block2 col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1">
             <div class="social-icon"><a href="https://vk.com/parkist"><img src="{% static 'main/css/img/vk.png' %}"/></a></div>
             <div class="social-icon"><a href="https://ok.ru/group/53121181810837"><img src="{% static 'main/css/img/ok.png' %}"/></a></div>
             <div class="social-icon"><a href="https://facebook.com/parkist.ru"><img src="{% static 'main/css/img/fb.png' %}"/></a></div>
             <div class="social-icon"><a href="https://instagram.com/parkist.ru"><img src="{% static 'main/css/img/in.png' %}"/></a></div>
             <div class="social-icon"><a href="https://twitter.com/PARKISTRU"><img src="{% static 'main/css/img/tw.png' %}"/></a></div>
         </div>
-          <div class="footer-block3 col-md-4">+7 (495) 506-76-18<br><span><a href="mailto:info@parkist.ru">info@parkist.ru</a></span><br><a class="work-footer" href="/become-parkist">Стать Паркистом</a></a></div>
-        </div>
+          <div class="footer-block3 col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1">+7 (495) 506-76-18<br><span><a href="mailto:info@parkist.ru">info@parkist.ru</a></span><br><a class="work-footer" href="/become-parkist">Стать Паркистом</a></a>
+
+
+              </div></div>
+          <div class="footer-links col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1">
+              <a href="faq">ЧАВО</a><br>
+              <a href="for-business">Паркист для Бизнеса</a><br>
+              <a href="legal/termsofuse">Пользовательское соглашение</a>
+          </div>
+
         <div class="block-footer2 col-md-12 col-sm-12 col-xs-12">
-            <a href="legal/taxi_termsofuse">Пользовательское соглашение</a>
+
         </div>
       </div>
     </footer>
