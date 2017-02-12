@@ -268,12 +268,12 @@ display: block;
 
 .input-group.time {
 padding-bottom: 10px;
-width: 44%;
+width: 95%;
 }
 
 .input-group.date {
 padding-bottom: 10px;
-width: 55%;
+width: 100%;
 }
 .date-time {
 display: flex;

@@ -88,6 +88,6 @@ def become_parkist(request):
     context = {}
     return render(request, 'main/become-parkist.html', context)
 
-def taxi_termsofuse(request):
+def termsofuse(request):
     context = {}
-    return render(request, 'main/taxi_termsofuse.html', context)
+    return render(request, 'main/termsofuse.html', context)

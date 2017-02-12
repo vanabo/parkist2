@@ -7,26 +7,29 @@
   <title>Parkist - Живая парковка в Москве</title>
   <meta name="description" content="Тяжело припарковаться в центре города? Паркист позаботится о Вашем автомобиле. Вы передаете и забираете машину в любом удобном Вам месте!" />
   <meta name="keywords" content="паркист, parkist, живая парковка, парковка в москве" />
-  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="{% static 'main/js/jquery.maskedinput.js' %}"></script>
-  <script src="{% static 'bootstrap3_datetime/js/moment.min.js' %}"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="{% static 'main/js/jquery-3.1.1.js' %}"></script>
+  <script src="{% static 'main/js/jquery-ui.js' %}"></script>
+  <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+  <script src="{% static 'main/js/collapse.js' %}"></script>
+  <script src="{% static 'main/js/transition.js' %}"></script>
+  <script src="{% static 'main/js/moment.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap-datetimepicker.ru.js' %}"></script>
+  <script src="{% static 'main/js/jquery.maskedinput.js' %}"></script>
+  <script src="{% static 'main/js/circle.js' %}" type="text/javascript"></script>
+  <script src="{% static 'main/js/burger-menu.js' %}" type="text/javascript"></script>
   <link rel="shortcut icon" href="{% static 'main/css/img/favicon.ico' %}" type="image/x-icon">
   <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-  <script src="{% static 'bootstrap3_datetime/js/bootstrap-datetimepicker.js' %}"></script>
-  <script src="{% static 'bootstrap3_datetime/js/locales/bootstrap-datetimepicker.ru.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap-datetimepicker.min.js' %}"></script>
   <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
   <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
   <script src="//yastatic.net/share2/share.js"></script>
-  <link rel="stylesheet" href="{% static 'bootstrap3_datetime/css/bootstrap-datetimepicker.css' %}">
-  <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-  <script src="{% static 'main/js/circle.js' %}" type="text/javascript"></script>
-  <script src="{% static 'main/js/burger-menu.js' %}" type="text/javascript"></script>
   <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
   <link rel="stylesheet" href="{% static 'main/css/burger-menu.css' %}">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="{% static 'main/css/bootstrap-datetimepicker.css' %}">
   <meta name="mailru-domain" content="3e71CWd3hLMGIDj5" />
   <meta name='wmail-verification' content='6b91b413fef007b8723e55f9b21cbc0d' />
   <meta name="yandex-verification" content="75e7807aa7e4cccc" />
@@ -199,8 +202,43 @@ src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
       {% endif %}
 
       <div class="date-time">
-    {{ form.current_time }}
-    {{ form.current_date }}
+          <div class="form-group">
+        <div class='input-group time' id='datetimepicker3'>
+            {{ form.current_time }}
+            <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+            </span>
+        </div>
+    </div>
+    <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker3').datetimepicker({
+                    format: 'LT',
+                    showClose: true,
+                    disabledHours: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23, 24],
+                    useCurrent: false,
+                });
+            });
+        </script>
+    <div class="form-group">
+        <div class='input-group date' id='datetimepicker11'>
+            {{ form.current_date }}
+            <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </div>
+          <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker11').datetimepicker({
+                    daysOfWeekDisabled: [0,6],
+                    format: 'DD.MM.YYYY',
+                    locale: 'ru',
+                    showClose: true,
+                    minDate: moment.now(),
+                });
+            });
+        </script>
       </div>
   </div>
     <div class="form-group">
@@ -237,7 +275,7 @@ src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
             </div>
             <div class="block-img col-md-2 col-sm-3 col-xs-6">
                 <div class="img-square"><img  src="{% static 'main/css/img/icon2.png' %}" align="center" /></div>
-                <p>с&nbsp;12:00 до&nbsp;22:00</p>
+                <p>Понедельник - пятница<br>с&nbsp;12:00 до&nbsp;22:00</p>
             </div>
             <div class="block-img col-md-2 col-sm-3 col-xs-6">
                 <div class="img-square"><img  src="{% static 'main/css/img/icon3.png' %}" align="center" /></div>
@@ -421,6 +459,7 @@ src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
             <div class="block-table col-md-4 col-md-offset-8 col-sm-5 col-sm-offset-6 col-xs-12">
                 <h3>Зона Живой Парковки</h3>
                 <p>Время работы:<br>
+                <strong>Понедельник - пятница</strong><br>
                 <span>12:00 - 22:00</span></p>
                 <div class="block-button">
                     <a href="#order" class="button-orange">Вызвать Паркиста</a>
@@ -454,7 +493,7 @@ src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
           <div class="footer-block3 col-md-4">+7 (495) 506-76-18<br><span><a href="mailto:info@parkist.ru">info@parkist.ru</a></span><br><a class="work-footer" href="/become-parkist">Стать Паркистом</a></a></div>
         </div>
         <div class="block-footer2 col-md-12 col-sm-12 col-xs-12">
-            <a href="legal/taxi_termsofuse">Пользовательское соглашение</a>
+            <a href="legal/termsofuse">Пользовательское соглашение</a>
         </div>
       </div>
     </footer>
