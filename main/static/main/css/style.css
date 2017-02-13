@@ -487,6 +487,11 @@ padding: 10px;
 margin: 0 auto;
 text-align: center;
 }
+.block-sharing .p-small {
+margin: 0 auto;
+text-align: center;
+font-size: 1rem;
+}
 .block-blue {
 background: #65afb8;
 padding: 0;
