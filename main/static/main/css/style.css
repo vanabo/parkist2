@@ -314,7 +314,6 @@ flex-wrap: wrap;
 background: #65afb8;
 padding-top:40px;
 padding-bottom:40px;
-margin-top: 30px;
 }
 .block-table {
 padding:25px;
@@ -345,6 +344,14 @@ text-align: center;
 	border-left: 40px solid transparent;
 	border-right: 40px solid transparent;
 	border-top: 30px solid #65afb8;
+	margin: 0 auto;
+}
+#triangle-down-gray {
+	width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-top: 30px solid #eee;
 	margin: 0 auto;
 }
 .block-img p {
@@ -468,6 +475,22 @@ padding-bottom: 40px;
 padding-bottom:20px;
 padding-top:20px;
 text-align: center;
+}
+.block-sharing p span {
+display: block;
+color: #da940d;
+font-size: 3.2rem;
+font-weight: bold;
+padding: 10px;
+}
+.block-sharing .p-center{
+margin: 0 auto;
+text-align: center;
+}
+.block-blue {
+background: #65afb8;
+padding: 0;
+margin: 0;
 }
 .ya-share2 {
 text-align: center;
