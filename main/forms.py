@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 
-from . models import Order, CallBack2
+from . models import Order, CallBack2, Promo
 
 import datetime
 
@@ -47,8 +47,8 @@ class Order(ModelForm):
 
     def __init__(self, *args, **kwargs):
         kwargs.update(initial={
-            'current_time': ttime,
-            'current_date': tdate,
+            'current_time': datetime.datetime.now()+datetime.timedelta(minutes=30),
+            'current_date': datetime.date.today(),
         })
         super(Order, self).__init__(*args, **kwargs)
         self.fields['phone4'].widget.attrs.update({
@@ -83,5 +83,20 @@ class CallBack2(ModelForm):
             'id': 'phone2',
         })
         self.fields['name'].widget.attrs.update({
+            'class': 'form-control',
+        })
+
+class Promo(ModelForm):
+    class Meta:
+        model = Promo
+        fields = ['email', 'phone2']
+
+    def __init__(self, *args, **kwargs):
+        super(Promo, self).__init__(*args, **kwargs)
+        self.fields['phone2'].widget.attrs.update({
+            'class': 'form-control',
+            'id': 'phone3',
+        })
+        self.fields['email'].widget.attrs.update({
             'class': 'form-control',
         })

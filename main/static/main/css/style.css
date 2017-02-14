@@ -475,17 +475,19 @@ padding-bottom: 40px;
 padding-bottom:20px;
 padding-top:20px;
 text-align: center;
+color: #65afb8;
 }
 .block-sharing p span {
 display: block;
-color: #da940d;
 font-size: 3.2rem;
 font-weight: bold;
 padding: 10px;
+color: #333;
 }
 .block-sharing .p-center{
 margin: 0 auto;
 text-align: center;
+margin-bottom: 30px;
 }
 .block-sharing .p-small {
 margin: 0 auto;

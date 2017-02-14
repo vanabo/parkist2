@@ -113,10 +113,10 @@ src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
           <a href="#order">Вызвать Паркиста</a>
         </li>
           <li>
-          <a href="#callback">Обратный звонок</a>
+          <a href="#sale">Акция</a>
         </li>
           <li>
-          <a href="#contact">Контакты</a>
+          <a href="#callback">Обратный звонок</a>
         </li>
       </ul>
     </div>
@@ -268,12 +268,44 @@ src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
 </div>
     <div class="container-fluid">
     <div class="row">
+        <a name="sale"></a>
         <div class="block-sharing col-md-12 col-sm-12 col-xs-12">
             <div class="heading3">
-                <h2>Акция: бесплатная парковка в течение недели!</h2></div>
-                <p class="p-center">Используйте промокод при оформлении заказа через сайт или по телефону и паркуйтесь бесплатно в течение недели</p>
-            <p class="p-center"><span>CAR017</span></p>
-            <div class="p-small">Акция действует до 28.02.2017 на одну машину для парковки не более 2-х часов.</div>
+                <h2>Акция: бесплатная парковка!</h2></div>
+                <p class="p-center">Используйте промокод при оформлении заказа через сайт или по телефону и паркуйтесь бесплатно в течение недели.<br>Промокод действителен в течение недели!</p>
+           <div class="block-form col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
+            <form action="/#sale" role="form" id="contactForm3" method="POST" onsubmit="fbq('track', 'Lead'); yaCounter41839079.reachGoal('promo'); ga('send', 'event', 'orders', 'website', 'promo'); return true;">
+
+    {% csrf_token %}
+    {% if success3 %}
+    <div class="bg-success">
+    {{ success3 }}
+    </div>
+    {% endif %}
+    {{ form3.non_field_errors }}
+    <div class="form-group">
+    <label for="form3.phone2.id_for_label">Телефон*</label>
+    {% if form3.phone2.errors %}
+        <div class="bg-danger">
+    {{ form3.phone2.errors }}
+        </div>
+    {% endif %}
+    {{ form3.phone2 }}
+    </div>
+    <div class="form-group">
+    <label for="form3.email.id_for_label">Электронная почта</label>
+    {% if form3.email.errors %}
+        <div class="bg-danger">
+    {{ form3.email.errors }}
+        </div>
+    {% endif %}
+    {{ form3.email }}
+    </div>
+    <div class="form-group block-button block-center"><input type="submit" name="submit4" class="button-orange" value="Получить промокод" /></div>
+
+</form>
+           </div>
+            <div class="p-small col-md-12 col-xs-12 col-sm-12">Акция действует до 28.02.2017 на одну машину для парковки не более 2-х часов.</div>
         </div>
     </div>
     </div>
@@ -519,7 +551,7 @@ src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
 
               </div></div>
           <div class="footer-links col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1">
-              <a href="/faq">ЧАВО</a><br>
+              <a href="/faq">Вопросы и ответы</a><br>
               <a href="/for-business">Паркист для Бизнеса</a><br>
               <a href="/legal/termsofuse">Пользовательское соглашение</a>
           </div>

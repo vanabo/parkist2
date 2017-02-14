@@ -12,4 +12,8 @@ class CallBack2(models.Model):
     name = models.CharField(max_length=50, blank=True)
     phone = models.CharField(max_length=17, blank=False)
 
+class Promo(models.Model):
+    email = models.EmailField(max_length=50, blank=True)
+    phone2 = models.CharField(max_length=17, blank=False)
+
 
