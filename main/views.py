@@ -89,6 +89,8 @@ def index(request):
         promo = 'CAR' + str(code)
         message = '{0} {1}'.format('Промокод на бесплатную парковку', promo)
         contact_message3 = '{0} {1} {2}'.format(form3_email, to_phone3, message)
+
+
         send_mail(
             subject4,
             contact_message3,
@@ -96,13 +98,14 @@ def index(request):
             to_email,
             fail_silently=True,
         )
-        send_mail(
-            subject4,
-            message,
-            from_email,
-            to_email2,
-            fail_silently=True,
-        )
+        if to_email2:
+            send_mail(
+                subject4,
+                message,
+                from_email,
+                to_email2,
+                fail_silently=True,
+            )
 
         payload = {'user': 'nadezhda.valyaeva@gmail.com', 'password': '1522ynMqc2QlyVXSclSLWqYaMwMy', 'from': 'NEWS', 'to': to_phone3, 'text': message}
         r = requests.get("https://gate.smsaero.ru/send/", params=payload)

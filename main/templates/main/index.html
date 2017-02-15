@@ -250,6 +250,14 @@ src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
     {% endif %}
     {{ form.phone4 }}
     </div>
+    <script>
+//Код jQuery, установливающий маску для ввода телефона элементу input
+//1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+$(function(){
+  //2. Получить элемент, к которому необходимо добавить маску
+  $("#phone").mask("+7(999) 999-9999");
+});
+</script>
     <div class="form-group">
     <label for="form.promo.id_for_label">Промокод (если есть)</label>
     {% if form.promo.errors %}
@@ -271,8 +279,8 @@ src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
         <a name="sale"></a>
         <div class="block-sharing col-md-12 col-sm-12 col-xs-12">
             <div class="heading3">
-                <h2>Акция: бесплатная парковка!</h2></div>
-                <p class="p-center">Используйте промокод при оформлении заказа через сайт или по телефону и паркуйтесь бесплатно в течение недели.<br>Промокод действителен в течение недели!</p>
+                <h2>Акция: 2 бесплатных парковки в феврале!</h2></div>
+                <p class="p-center">Получите промокод по СМС или электронной почте.</p>
            <div class="block-form col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
             <form action="/#sale" role="form" id="contactForm3" method="POST" onsubmit="fbq('track', 'Lead'); yaCounter41839079.reachGoal('promo'); ga('send', 'event', 'orders', 'website', 'promo'); return true;">
 
@@ -292,6 +300,14 @@ src="https://www.facebook.com/tr?id=509242749201700&ev=PageView&noscript=1"
     {% endif %}
     {{ form3.phone2 }}
     </div>
+                <script>
+//Код jQuery, установливающий маску для ввода телефона элементу input
+//1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+$(function(){
+  //2. Получить элемент, к которому необходимо добавить маску
+  $("#phone3").mask("+7(999) 999-9999");
+});
+</script>
     <div class="form-group">
     <label for="form3.email.id_for_label">Электронная почта</label>
     {% if form3.email.errors %}
