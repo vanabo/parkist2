@@ -98,7 +98,7 @@ def index(request):
             to_email,
             fail_silently=True,
         )
-        if to_email2:
+        if len(form3_email)>0:
             send_mail(
                 subject4,
                 message,
